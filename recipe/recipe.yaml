@@ -1,6 +1,6 @@
 context:
   name: zae-limiter
-  version: "0.4.1"
+  version: "0.5.0"
   python_min: "3.11"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/z/${{ name }}/zae_limiter-${{ version }}.tar.gz
-  sha256: efe3d0b6fa10f63a84c98bf397c2b0d48fe312304883b45fe85b933dc193d9e1
+  sha256: ba3b5d2bc8f29ef00b98c39b347fda9b1c7afbe96807e0fe56d137d23b7f97a3
 
 build:
   noarch: python
