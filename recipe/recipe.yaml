@@ -1,6 +1,6 @@
 context:
   name: zae-limiter
-  version: "0.6.1"
+  version: "0.7.0"
   python_min: "3.11"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/z/${{ name }}/zae_limiter-${{ version }}.tar.gz
-  sha256: 9117433a4404d57321bc4fa45307bd39d20b2437483b5600ec41ae8a601d5983
+  sha256: 24602c4af2d101037bc155e0bf9924e3774c98d529d8a7768e8a0acd27c7b9b7
 
 build:
   noarch: python
@@ -25,11 +25,11 @@ requirements:
   run:
     - python >=${{ python_min }}
     - aioboto3 >=12.0.0
+    - aws_lambda_builders >=1.40.0
     - boto3 >=1.34.0
     - click >=8.0.0
+    - pip
     - python-ulid >=3.0.0
-    - types-aiobotocore >=2.0.0
-    - types-aiobotocore-dynamodb >=2.0.0
 
 tests:
   - python:
@@ -37,6 +37,12 @@ tests:
         - zae_limiter
       pip_check: true
       python_version: ${{ python_min }}.*
+  - script:
+      - zae-limiter --help
+      - zae-limiter lambda-export --output lambda.zip
+    requirements:
+      run:
+        - pip
 
 about:
   homepage: https://github.com/zeroae/zae-limiter
