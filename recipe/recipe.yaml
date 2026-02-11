@@ -1,6 +1,6 @@
 context:
   name: zae-limiter
-  version: "0.8.1"
+  version: "0.9.0"
   python_min: "3.11"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/z/${{ name }}/zae_limiter-${{ version }}.tar.gz
-  sha256: c33a944ac2c22dba6d4390f1604d15cc699ceef891bad227d647967db9d3efe7
+  sha256: db202461184c7ba7cf047a50b7878f250b08aec350fc8c6c8d895b1ca397021e
 
 build:
   noarch: python
@@ -22,6 +22,8 @@ requirements:
     - pip
     - hatchling
     - hatch-vcs
+    - hatch-build-scripts >=1
+    - ruff >=0.9.0
   run:
     - python >=${{ python_min }}
     - aioboto3 >=12.0.0
@@ -30,6 +32,7 @@ requirements:
     - click >=8.0.0
     - pip
     - python-ulid >=3.0.0
+    - questionary >=2.0
 
 tests:
   - python:
