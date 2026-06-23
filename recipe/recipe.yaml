@@ -1,6 +1,6 @@
 context:
   name: zae-limiter
-  version: "0.10.1"
+  version: "0.10.2"
   python_min: "3.11"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/z/${{ name }}/zae_limiter-${{ version }}.tar.gz
-  sha256: df2407e968761ea89870bcf8bc1d1c01366f607b287fa8e096dd6628cf42329f
+  sha256: 5fe3c9a2c483c801bdd8152580901dd4f3275431868694fc764aac5d579a72ae
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
     - ruff >=0.9.0
   run:
     - python >=${{ python_min }}
-    - aioboto3 >=12.0.0
+    - aiobotocore >=2.13.0
     - aws_lambda_builders >=1.40.0
     - boto3 >=1.34.0
     - click >=8.0.0
